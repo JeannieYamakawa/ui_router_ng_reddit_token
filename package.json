@@ -10,8 +10,9 @@
   "author": "Jeannie Yamakawa <jkyamakawa@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "bcrypt-as-promised": "^1.1.0",
+    "bcrypt": "^0.8.7",
     "body-parser": "^1.15.2",
+    "dotenv": "^2.0.0",
     "ejs": "^2.5.2",
     "express": "^4.14.0",
     "jsonwebtoken": "^7.1.9",

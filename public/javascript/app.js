@@ -1,32 +1,20 @@
 var app = angular.module('redditApp', ['ui.router']);
-// console.log('booyah');
 app.config(function($stateProvider, $urlRouterProvider){
     var homeState = {
       name: 'home',
       url: '/',
       templateUrl: 'partials/signup.html',
-      
+      controller: 'HomeController',
+      //resolve property passes in key value pairs into the controller for you. this can be used to make a call to verify a user before you do anything on the view.
     }
+
 
     var userState = {
-      url: '/users',
+      name: 'postsHome',
+      url: '/posts',
       templateUrl: 'partials/users.html',
-      controller: 'UserListController'
+      controller: 'PostsController'
     }
-
-    // var userDetailState = {
-    //   url: '/:user_name',
-    //   parent: userState,
-    //   templateUrl: 'partials/userDetail.html',
-    //   controller: 'UserDetailController'
-    // }
-    //
-    // var userFoodState = {
-    //   url: '/:food',
-    //   parent: userState,
-    //   templateUrl: 'partials/userDetail.html',
-    //   controller: 'UserDetailController'
-    // }
     $stateProvider.state(homeState);
 
     // $stateProvider.state('users', userState);
@@ -36,10 +24,12 @@ app.config(function($stateProvider, $urlRouterProvider){
     $urlRouterProvider.otherwise('/');
   });
 
-    app.service('CurrentUserService', function() {
-    this.currentUser = {};
-    this.setCurrentUser = function(user) {
-      this.currentUser = user;
-    }
 
-})
+
+//     app.service('CurrentUserService', function() {
+//     this.currentUser = {};
+//     this.setCurrentUser = function(user) {
+//       this.currentUser = user;
+//     }
+//
+// })

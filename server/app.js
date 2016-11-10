@@ -4,13 +4,10 @@ const app = express()
 const path = require('path');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
+const dotenv = require('dotenv').config();
 const methodOverride = require('method-override');
 // *** routes *** //
 const users = require('./routes/users');
-
-
-app.use(users);
-
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -21,6 +18,7 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(users);
 
 app.use(express.static('public'));
 
