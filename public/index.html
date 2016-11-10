@@ -6,22 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-ui-router.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.js"></script>
 
     <script src = './javascript/app.js'charset="UTF-8"></script>
     <script src = './javascript/services.js'charset="UTF-8"></script>
-    <script src = './javascript/directives.js'charset="UTF-8"></script>
     <link rel="stylesheet" href="style.css">
     <!-- controllers depend on everything so theyre on the bottom. -->
     <script src = './javascript/controllers.js'charset="UTF-8"></script>
 </head>
-<body ng-app = 'redditApp'>
+<body ng-app="redditApp">
 
-    <!-- <a ui-sref="home" ui-sref-active="active">Home</a>
-    <a ui-sref="users" ui-sref-active="active">Users</a> -->
     <ui-view></ui-view>
 <h1>{{1+1}}</h1>
 </body>
