@@ -10,8 +10,8 @@ const jwt = require('jsonwebtoken');
 
 
 
-// router.get('/posts', (req, res, next) => {
-//     res.redirect('/');
+// router.get('/', (req, res, next) => {
+//     res.redirect('/posts');
 // });
 
 router.get('/posts', function(req,res,next){

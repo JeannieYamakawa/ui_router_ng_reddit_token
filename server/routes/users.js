@@ -12,7 +12,14 @@ const jwt = require('jsonwebtoken');
 
 router.post('/signup', function(req,res,next){
     let errors = [];
+    if (!req.body.email) {errors.push("Email can't be blank")};
+    if (!req.body.username) {errors.push("Name can't be blank")};
+    if (!req.body.password) {errors.push("Password can't be blank")};
+    if ($window.localStorage.getItem('token')){
+        console.log($window.localStorage.getItem('token'), '$window.localStorage.getItem(token)');
+    }
       if (errors.length) {
+          console.log(errors);
         res.status(422).json({
           errors: errors
         })
@@ -35,6 +42,7 @@ router.post('/signup', function(req,res,next){
                   .then(function (users) {
                     const user = users[0];
                     const token = jwt.sign({ id: user.id }, 'process.env.JWT_SECRET');
+                    console.log(token, 'token');
                     res.json({id: user.id, email: user.email, username: user.username, token: token})
                   })
                } else {
