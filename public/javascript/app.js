@@ -73,10 +73,13 @@ app.config(function($stateProvider, $urlRouterProvider){
 
 
 angular.module('redditApp').run(function ($rootScope, $location, $window, $state) {
-      $rootScope.$on('$routeChangeStart', function (event, next, current) {
+      $rootScope.$on('$locationChangeSuccess', function (event, next, current) {
         // if the next route requires login and we don't have a token, then redirect to the homepage
-        if (next.$$route.requiresLogin && !localStorage.getItem('token')) {
-            $state.go('signup')
-        }
+        if ($state.current.requiresLogin) {
+            //check for token and then continue if there is one
+            if(!token){
+                    $state.go('signup')
+                }
+        }//else $state.go('signup')
       });
 });
