@@ -1,4 +1,4 @@
-// 
+//
 // app.controller('SignupController', ['$scope', '$http', '$window','$location', 'CurrentUserService',function($scope, $http, $window, $location, CurrentUserService) {
 //     $scope.submitSignupInfo = function(username, email, password){
 //         $http.post('/signup', $scope.user)
