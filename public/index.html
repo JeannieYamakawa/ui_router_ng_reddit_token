@@ -17,30 +17,8 @@
     <script src = './javascript/controllers.js'charset="UTF-8"></script>
 </head>
 <body ng-app="redditApp">
-    <!-- nav bar -->
-            <div class='well well-lg navbar'>
-                <div class='col-xs-3'>
-                    <span id='redditHeader'>Reddit</span>
-                </div>
-                <div class='col-xs-3'>
-                    <input ng-click="newPostClicked()" class='btn btn-default' type='button' value='New Post'>
-                </div>
-                <div class='col-xs-3'>
-                    <input class='searchBar' ng-model='searchBar' type="text" placeholder='Search...'>
-                </div>
-                <div class='col-xs-3'>
-                    <span>Sort By:</span>
 
-                    <select class="dropdown" name="dropdown" ng-model='dropMenu'>
-                        <option value="" selected hidden />
-                        <option value="-date">Date</option>
-                        <option value="-numberOfVotes">Votes</option>
-                        <option value="title">Title</option>
-                    </select>
-                </div>
-
-            </div>
-    <!-- end of nav bar -->
     <ui-view></ui-view>
+
 </body>
 </html>

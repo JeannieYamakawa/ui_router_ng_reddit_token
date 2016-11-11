@@ -25,5 +25,18 @@ app.controller('LoginController', ['$scope', '$http', '$window','$location', 'Cu
 app.controller('PostsController', ['$scope', '$http', '$window','$location', 'CurrentUserService',function($scope, $http, $window, $location, CurrentUserService) {
     $scope.someButtonPressed = function() {
         // $state.go('users');
+        $http.get('/posts')
+             .success(function(res){
+                 $scope.posts = res;
+                 console.log(res, 'this is the response in controller');
+             });
     }
+    //    function getFromServer(){
+    //      $http.get('/posts')
+    //           .success(function(res){
+    //               $scope.posts = res;
+    //               console.log(res, 'this is the response in controller');
+    //           });
+    //    }
+    //    getFromServer();
 }]);
