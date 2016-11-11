@@ -12,7 +12,6 @@ app.config(function($stateProvider, $urlRouterProvider){
       url: '/login',
       templateUrl: 'partials/login.html',
       controller: 'LoginController',
-      //resolve property passes in key value pairs into the controller for you. this can be used to make a call to verify a user before you do anything on the view.
     }
 
     var postsState = {

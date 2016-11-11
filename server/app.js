@@ -8,6 +8,7 @@ const dotenv = require('dotenv').config();
 const methodOverride = require('method-override');
 // *** routes *** //
 const users = require('./routes/users');
+const posts = require('./routes/posts');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -19,6 +20,8 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(users);
+app.use(posts);
+
 
 app.use(express.static('public'));
 

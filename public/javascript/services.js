@@ -4,5 +4,4 @@
     this.setCurrentUser = function(user) {
       this.currentUser = user;
     }
-
 })
