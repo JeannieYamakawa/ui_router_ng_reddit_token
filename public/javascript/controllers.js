@@ -26,17 +26,9 @@ app.controller('PostsController', ['$scope', '$http', '$window','$location', 'Cu
     $scope.someButtonPressed = function() {
         // $state.go('users');
         $http.get('/posts')
-             .success(function(res){
-                 $scope.posts = res;
-                 console.log(res, 'this is the response in controller');
+             .success(function(response){
+                 $scope.posts = response.posts;
+                 console.log($scope.posts, 'this is the response in controller');
              });
     }
-    //    function getFromServer(){
-    //      $http.get('/posts')
-    //           .success(function(res){
-    //               $scope.posts = res;
-    //               console.log(res, 'this is the response in controller');
-    //           });
-    //    }
-    //    getFromServer();
 }]);

@@ -28,14 +28,14 @@ router.post('/signup', function(req,res,next){
                  knex('users')
                   .insert({
                     email: req.body.email,
-                    name: req.body.username,
-                    password_hash: passwordHash
+                    username: req.body.username,
+                    password: passwordHash
                     })
                   .returning('*')
                   .then(function (users) {
                     const user = users[0];
                     const token = jwt.sign({ id: user.id }, 'process.env.JWT_SECRET');
-                    res.json({id: user.id, email: user.email, name: user.username, token: token})
+                    res.json({id: user.id, email: user.email, username: user.username, token: token})
                   })
                } else {
                 res.status(422).json({
@@ -56,7 +56,7 @@ router.get('/verify', function(req,res,next){
         // payload is {id: 56}
         knex('users').where({id: payload.id}).first().then(function (user) {
           if (user) {
-            res.json({id: user.id, name: user.name})
+            res.json({id: user.id, username: user.username})
           } else {
             res.status(403).json({error: "Invalid ID" })
           }
